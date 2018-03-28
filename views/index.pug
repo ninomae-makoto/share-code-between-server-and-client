@@ -1,0 +1,10 @@
+extends base
+
+block content
+  script(src="./javascripts/dist/index.built.js")
+  div#app
+    h1 サーバ・クライアント共通化テスト
+    h2 サーバから取得
+    p!= date
+    h2 ブラウザ上で設定
+    p {{ clientDateTime }}

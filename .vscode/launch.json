@@ -1,0 +1,33 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "プログラムの起動",
+      "program": "${workspaceRoot}/app.js",
+      "protocol": "inspector",
+      "preLaunchTask": "node compile",
+      "args": [
+        "-d"
+      ]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Mocha Tests",
+      "program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+      "protocol": "inspector",
+      "args": [
+        "-u",
+        "tdd",
+        "--timeout",
+        "999999",
+        "--colors",
+        "${workspaceRoot}/test"
+      ],
+      "preLaunchTask": "node compile",
+      "internalConsoleOptions": "openOnSessionStart"
+    },
+  ]
+}
